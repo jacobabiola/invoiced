@@ -20,7 +20,7 @@ When a client deposits funds into a milestone or milstone(s), payment is sent to
 
 In the case either a client or provider decides to lock funds in smart invoice, a submission is made to a third party arbitration provider who will help by resolving the dispute.
 
-
+DEMO : https://628794f81f3439009351cdec--lustrous-smakager-fcc7ae.netlify.app/#
 ## install packages
 
 ```
