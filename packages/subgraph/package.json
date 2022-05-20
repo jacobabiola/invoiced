@@ -1,0 +1,33 @@
+{
+  "name": "@smart-invoice/subgraph",
+  "version": "0.1.0",
+  "scripts": {
+    "codegen": "graph codegen --output-dir src/types/",
+    "build": "graph build",
+    "auth": "graph auth --product hosted-service <ID>",  
+    "create-local": "graph create --node http://localhost:8020/ test/smart-invoices",
+    "create-metertest": "graph create --node http://graph-on-testnet.meter.io:8020 meterio/smart-invoice",
+    "remove-metertest": "graph remove --node http://167.71.140.181:8020 meterio/smart-invoice",
+    "remove-local": "graph remove --node http://localhost:8020/ test/smart-invoices",
+    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 test/smart-invoices",
+    "prepare-local": "mustache src/config/local.json subgraph.template.yaml > subgraph.yaml",
+    "prepare-rinkeby": "mustache src/config/rinkeby.json subgraph.template.yaml > subgraph.yaml",
+    "prepare-metertest": "mustache src/config/metertest.json subgraph.template.yaml > subgraph.yaml",
+    "prepare-xdai": "mustache src/config/xdai.json subgraph.template.yaml > subgraph.yaml",
+    "prepare-mainnet": "mustache src/config/mainnet.json subgraph.template.yaml > subgraph.yaml",
+    "deploy-only-rinkeby": "graph deploy --product hosted-service meterio/smart-invoice",
+    "deploy-only-metertest": "graph deploy meterio/smart-invoice --ipfs http://graph-on-testnet.meter.io:5001 --node http://graph-on-testnet.meter.io:8020 --debug ",
+    "deploy-only-xdai": "graph deploy --studio smartinvoice --ipfs https://api.studio.thegraph.com/ipfs/ --node https://api.studio.thegraph.com/deploy/ --debug",
+    "deploy-only-mainnet": "graph deploy dan13ram/mainnet-smart-invoices --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/ --debug",
+    "deploy-rinkeby": "yarn prepare-rinkeby && yarn codegen && yarn build && yarn deploy-only-rinkeby",
+    "deploy-xdai": "yarn prepare-xdai && yarn codegen && yarn build && yarn deploy-only-xdai",
+    "deploy-mainnet": "yarn prepare-mainnet && yarn codegen && yarn build && yarn deploy-only-mainnet",
+    "deploy-metertest": "yarn prepare-metertest && yarn codegen && yarn build && yarn create-metertest && yarn deploy-only-metertest"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@graphprotocol/graph-cli": "^0.22.1",
+    "@graphprotocol/graph-ts": "^0.22.1",
+    "mustache": "^4.2.0"
+  }
+}

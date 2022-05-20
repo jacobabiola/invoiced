@@ -1,0 +1,10 @@
+{
+  "network": "metertest",
+  "factories": [
+    {
+      "factoryName": "Version00",
+      "startBlock": "15018939",
+      "address": "0x588bAF3e28fA8CDE7B2FA75405478bF4eFA15A73"
+    }
+  ]
+}

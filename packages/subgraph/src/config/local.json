@@ -1,0 +1,10 @@
+{
+  "network": "local",
+  "factories": [
+    {
+      "factoryName": "Version00",
+      "startBlock": "1",
+      "address": "0x1E0f72d141a0b4407a2b3c75F95E0751981F3130"
+    }
+  ]
+}
