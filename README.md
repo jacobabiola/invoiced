@@ -7,7 +7,7 @@ Each invoice is its own contract
 Deposits may come from any address
 Client can make deposits by milestone
 Milestone payments can be variable in size
-Custom arbitration can be set (LexDAO or any Ethereum Address)
+Custom arbitration can be set ( any Ethereum Address)
 Client can deposit more than the total amount (for gratuity)
 Tokens accidentally sent directly to invoice can be recovered
 
